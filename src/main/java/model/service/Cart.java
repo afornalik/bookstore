@@ -34,9 +34,9 @@ public class Cart {
     }
 
     public void printReception() {
-        System.out.println("reception on date " + "\n"+ LocalDateTime.now());
+        System.out.printf("|%5s|%10s|%10s|%20s|","id","name","price","discount price");
         for(Product product : productInCart){
-            System.out.println(product.getName() +"  -  "+product.getPrice());
+            System.out.printf("|%5s|%10s|%10s|%20s|",product.getId(),product.getName(),product.getPrice(),product.getPrice().multiply(new BigDecimal(0.8)));
         }
         System.out.println(getCartPrice());
 
