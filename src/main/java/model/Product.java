@@ -7,11 +7,13 @@ public abstract class Product {
     private final long id;
     private final String name;
     private final BigDecimal price;
+    private BigDecimal discountPrice;
 
     public Product(long id, String name, BigDecimal price) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.discountPrice = price;
     }
 
     public long getId() {
@@ -26,5 +28,11 @@ public abstract class Product {
         return price;
     }
 
+    public BigDecimal getDiscountPrice() {
+        return discountPrice;
+    }
 
+    public void setDiscountPrice(BigDecimal discountPrice) {
+        this.discountPrice = discountPrice;
+    }
 }
