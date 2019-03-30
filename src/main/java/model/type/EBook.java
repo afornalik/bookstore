@@ -8,7 +8,7 @@ import java.util.List;
 
 public class EBook extends Book {
 
-    private List<String> supportedFormats = new ArrayList<String>();
+    private List<String> supportedFormats;
 
     public EBook(long id, String name, BigDecimal priceString, String author, int pageCounter, List<String> supportedFormats) {
         super(id, name, priceString, author, pageCounter);
