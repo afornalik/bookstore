@@ -16,7 +16,8 @@ public class Main {
         Product product = new AudioBook(3, "Java Podstawy", new BigDecimal(87.6), "Kowalski", 876, 90000);
         Product product1 = new AudioBook(1, "Java", new BigDecimal(33.6), "Kowalski", 876, 90000);
         Product product2 = new AudioBook(6, "Algebra", new BigDecimal(17.6), "Kowalski", 876, 90000);
-        Product product3 = new PaperBook(3, "Atlas", new BigDecimal(43.3), "Nowak", 40);
+        Product product3 = new PaperBook(3, "Atlas", new BigDecimal(43.3), "Nowak", 300);
+        Product product4 = new PaperBook(3, "Atlas Świata", new BigDecimal(165.3), "Nowak", 120);
         List<Track> tracks = new ArrayList<>();
         Product audio = new Audio(11,"Smerfne hity",new BigDecimal(100), LocalDate.of(1990,11,22),tracks);
 
@@ -27,6 +28,7 @@ public class Main {
         productList.add(product2);
         productList.add(product3);
         productList.add(audio);
+        productList.add(product4);
 
         Cart cart = new Cart(productList);
 

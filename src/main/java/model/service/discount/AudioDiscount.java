@@ -21,11 +21,9 @@ public class AudioDiscount implements DiscountInterface {
 
         Audio audioObject = (Audio) product;
         LocalDate publishDate = audioObject.getPublishmentDate();
-
         Period between = Period.between(publishDate,LocalDate.now());
-        System.out.println(between.getYears());
+
         BigDecimal percentageValue = new BigDecimal((100-between.getYears())*0.01);
-        System.out.println(percentageValue);
 
 
         product.setDiscountPrice(product.getPrice().multiply(percentageValue));
