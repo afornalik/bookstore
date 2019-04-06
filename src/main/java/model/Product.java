@@ -35,4 +35,14 @@ public abstract class Product {
     public void setDiscountPrice(BigDecimal discountPrice) {
         this.discountPrice = discountPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", discountPrice=" + discountPrice +
+                '}';
+    }
 }
