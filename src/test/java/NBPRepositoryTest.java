@@ -2,6 +2,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.product.repository.nbp.ExchangeRate;
 import model.product.repository.nbp.NBPRepository;
+import model.product.repository.nbp.SingleRate;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -26,6 +27,10 @@ public class NBPRepositoryTest {
                 new TypeReference<List<ExchangeRate>>(){
                 });
         System.out.println(exchangeRateList);
-
+        for(ExchangeRate exchangeRate : exchangeRateList){
+            for(SingleRate singleRate : exchangeRate.getRates()){
+                System.out.println(singleRate.getCode());
+            }
+        }
     }
 }
