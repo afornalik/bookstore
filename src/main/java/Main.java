@@ -5,6 +5,9 @@ import model.service.Cart;
 import model.type.AudioBook;
 import model.type.PaperBook;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -33,5 +36,14 @@ public class Main {
         Cart cart = new Cart(productList);
 
         cart.printReception();
+
+
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("paperbook.csv",true);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 }

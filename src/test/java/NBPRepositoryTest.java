@@ -1,9 +1,11 @@
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.product.repository.ExchangeRateList;
-import model.product.repository.NBPRepository;
+import model.product.repository.nbp.ExchangeRate;
+import model.product.repository.nbp.NBPRepository;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 public class NBPRepositoryTest {
 
@@ -19,9 +21,11 @@ public class NBPRepositoryTest {
     @Test
     public void shouldParseJsonInProperWay() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        ExchangeRateList exchangeRateList = mapper.readValue(
-                jsonToParse.getBytes(),
-                ExchangeRateList.class);
+       List<ExchangeRate> exchangeRateList = mapper.readValue(
+                jsonToParse,
+                new TypeReference<List<ExchangeRate>>(){
+                });
         System.out.println(exchangeRateList);
+
     }
 }

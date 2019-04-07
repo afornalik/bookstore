@@ -1,5 +1,6 @@
-package model.product.repository;
+package model.product.repository.nbp;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.HttpResponse;
 import org.apache.http.ParseException;
 import org.apache.http.client.HttpClient;
