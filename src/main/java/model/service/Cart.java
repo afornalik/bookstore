@@ -42,8 +42,6 @@ public class Cart {
                 .reduce(BigDecimal.ZERO,BigDecimal::add);
     }
 
-
-
     public void printReception() {
         productInCart = calculateDiscount.calculateDiscount();
         System.out.printf("|%5s|%20s|%10s|%20s|\n\n","id","name","price","discount price");

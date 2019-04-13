@@ -12,19 +12,16 @@ import java.util.stream.Collectors;
 public class PosterDiscount implements DiscountInterface {
 
 
-    private List<Product> product;
+    private Product product;
 
-    public PosterDiscount(List<Product> product) {
+    public PosterDiscount(Product product) {
         this.product = product;
     }
 
     @Override
     public Product updateDiscountPrice() {
-      product = product.stream()
-              .sorted(Comparator.comparing(Product::getPrice))
-              .collect(Collectors.toList());
-
-        return product.get(1);
+        product.setDiscountPrice(BigDecimal.ONE);
+        return product;
     }
 
 

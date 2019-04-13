@@ -2,6 +2,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Product;
 import model.product.Audio;
+import model.product.Poster;
 import model.product.repository.nbp.ExchangeRate;
 import model.product.repository.nbp.NBPRepository;
 import model.product.repository.nbp.SingleRate;
@@ -18,6 +19,7 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -30,6 +32,11 @@ public class Main {
         Product product4 = new PaperBook(3, "Atlas Świata", new BigDecimal(165.3), "Nowak", 120);
         List<Track> tracks = new ArrayList<>();
         Product audio = new Audio(11, "Smerfne hity", new BigDecimal(100), LocalDate.of(1990, 11, 22), tracks);
+        Product poster1 = new Poster(544,"Jaś Fasola poster",new BigDecimal("200.4"));
+        Product poster2 = new Poster(22,"Jaś Fasola poster2",new BigDecimal("332.4"));
+        Product poster3 = new Poster(34,"Jaś Fasola poster3",new BigDecimal("42.4"));
+        Product poster4 = new Poster(54,"Jaś Fasola poster4",new BigDecimal("32.4"));
+        Product poster5 = new Poster(333,"Jaś Fasola poster5",new BigDecimal("34.8"));
 
         List<Product> productList = new ArrayList<>();
 
@@ -39,6 +46,8 @@ public class Main {
         productList.add(product3);
         productList.add(audio);
         productList.add(product4);
+
+        productList.addAll(Arrays.asList(poster1,poster2,poster3,poster4,poster5));
 
         Cart cart = new Cart(productList);
         cart.printReception();
